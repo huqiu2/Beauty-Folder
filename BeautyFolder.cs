@@ -28,7 +28,7 @@ public class CustomContextMenu : IContextMenu
             var selectedItems = ShellFile.FromFilePaths(info.LPWSTR);
             foreach (var item in selectedItems)
             {
-                // 这里可以添加代码来处理文件，例如创建desktop.ini
+                // 这里可以添加代码来处理文件，例如创建Desktop.ini
                 CreateDesktopIni(item.Path);
             }
         }
@@ -42,7 +42,7 @@ public class CustomContextMenu : IContextMenu
     {
         // 创建或修改desktop.ini文件
         string directoryPath = System.IO.Path.GetDirectoryName(filePath);
-        string desktopIniPath = System.IO.Path.Combine(directoryPath, "desktop.ini");
+        string desktopIniPath = System.IO.Path.Combine(directoryPath, "Desktop.ini");
 
         // 检查desktop.ini是否存在
         if (!System.IO.File.Exists(desktopIniPath))
