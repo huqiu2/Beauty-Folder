@@ -5,8 +5,8 @@ using System.Runtime.InteropServices;
 
 [ComVisible(true)]
 [ClassInterface(ClassInterfaceType.AutoDual)]
-[Guid("YOUR-GUID-HERE")] // 替换为您的GUID
-[ProgId("YourCompany.ShellExtension")]
+[Guid("a4d1d84d-bee3-4a77-b737-2c2d4c9af555")] // 替换为您的GUID
+[ProgId("BeautyFolder.ShellExtension")]
 [ComDefaultInterface(typeof(IContextMenu))]
 public class CustomContextMenu : IContextMenu
 {
