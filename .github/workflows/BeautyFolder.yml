@@ -18,16 +18,14 @@ jobs:
       with:
         dotnet-version: '6.0.x' # 或者你所需的特定版本
 
-    - name: Build DLL
-      run: dotnet build --configuration Release
-      working-directory: ./Project # 替换为你的项目路径
-
-    - name: Package DLL
-      run: dotnet publish --configuration Release --output ./publish
-      working-directory: ./Project # 替换为你的项目路径
+    - name: Build and publish DLL
+      run: |
+        dotnet build --configuration Release
+        dotnet publish --configuration Release --output ./publish
+      working-directory: ./Project # 确保这是您项目文件的路径
 
     - name: Upload DLL Artifact
       uses: actions/upload-artifact@v3
       with:
         name: BeautyFolder.dll
-        path: ./Project/publish/BeautyFolder.dll # 替换为你的项目路径
+        path: ./Project/publish/BeautyFolder.dll # 确保这是您发布输出的正确路径
