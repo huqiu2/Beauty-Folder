@@ -22,10 +22,10 @@ jobs:
       run: |
         dotnet build --configuration Release
         dotnet publish --configuration Release --output ./publish
-      working-directory: ./Project # 确保这是您项目文件的路径
+      working-directory: ./ # 确保这是您项目文件的路径
 
     - name: Upload DLL Artifact
       uses: actions/upload-artifact@v3
       with:
         name: BeautyFolder.dll
-        path: ./Project/publish/BeautyFolder.dll # 确保这是您发布输出的正确路径
+        path: ./publish/BeautyFolder.dll # 确保这是您发布输出的正确路径
